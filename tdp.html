@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="TDP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex" />
+  
+  <title>TDP</title>
+
+  <style>
+    html, body {
+      background-color: #369;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    .chart-container {
+      position: relative;
+    }
+    .chart div {
+      border-radius: 5px;
+      position: absolute;
+      font: 20px sans-serif;
+      background-color: #7cf;
+      text-align: right;
+      padding: 20px;
+      margin: 1px;
+    }
+    .chart div:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      color: #136;
+      z-index: 1000;
+    }
+    .chart div:last-child {
+      background-color: #136;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1>Temple Doors Project</h1>
+        <h2>Contributions</h2>
+        <div class="chart"></div>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+        var data = [518.46, 4000];
+
+        d3.select(".chart")
+        .selectAll("div")
+        .data(data)
+        .enter()
+        .append("div")
+        .style("width", function(d) { return (d / 5) + "px"; })
+        .text(function(d) { return `$${d}`; });
+    </script>
+</body>
+</html>
