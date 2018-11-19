@@ -13,53 +13,31 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+    * {
+      margin: 0;
+      border: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     html, body {
       background-color: #333;
       font-family: "Source Sans Pro", sans-serif;
       color: #cfdae5;
     }
-    .chart-container {
-      position: relative;
-    }
-    .chart div {
-      border-radius: 5px;
-      position: absolute;
-      font: 20px sans-serif;
-      background-color: #7cf;
-      text-align: right;
+    .container {
       padding: 20px;
-      margin: 1px;
-    }
-    .chart div:first-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      color: #136;
-      z-index: 1000;
-    }
-    .chart div:last-child {
-      background-color: #136;
     }
   </style>
 </head>
 
 <body>
-    <div class="chart-container">
-        <h1>Temple Doors Project (Target Date: February 2019)</h1>
-        <h2>Contributions</h2>
-        <div class="chart"></div>
-    </div>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-   <!-- <script>
-        var data = [2443.46, 5000];
-
-        d3.select(".chart")
-        .selectAll("div")
-        .data(data)
-        .enter()
-        .append("div")
-        .style("width", function(d) { return (d / 5) + "px"; })
-        .text(function(d) { return `$${d}`; });
-    </script>-->
-    <dn-meter min="0" current="2443.46" max="5000" prefix="$" theme="cool"></dn-meter>
+    <div class="container">
+      <div class="chart-container">
+          <h1>Temple Doors Project (Target Date: February 2019)</h1>
+          <h2>Contributions</h2>
+          <div class="chart"></div>
+      </div>
+      <dn-meter min="0" current="2443.46" max="5000" prefix="$" theme="cool"></dn-meter>
+  </div>
 </body>
 </html>
